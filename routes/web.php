@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\EquipamentosController;
 use App\Http\Controllers\LocaisController;
 use App\Http\Controllers\TiposControllers;
+use App\Http\Controllers\ReservasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,14 +26,16 @@ Route::get('/', function () {
  Auth::routes();
 
  Route::middleware(['auth'])->group(function () {
-    Route::resource('local', LocaisController::class);
-    Route::resource('equipamento', EquipamentosController::class);
     Route::get('/tipo', [TiposControllers::class, 'listar']);
     Route::get('/tipo/create', [TiposControllers::class, 'create'])->name('tipo.create');
     Route::get('/tipo/{tipo_id}',[TiposControllers::class, 'show'])->name('tipo.show');
     Route::post('/tipo', [TiposControllers::class, 'store']);
     Route::patch('/tipo/{tipo_id}', [TiposControllers::class, 'update']);
     Route::delete('/tipo/{tipo_id}', [TiposControllers::class, 'deletar']);
+    Route::resource('local', LocaisController::class);
+    Route::resource('equipamento', EquipamentosController::class);
+    Route::resource('cliente',ClientesController::class);
+    Route::resource('reserva',ReservasController::class);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

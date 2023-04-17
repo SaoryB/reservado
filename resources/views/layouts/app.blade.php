@@ -31,15 +31,27 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @auth
-                        <li class="nav-item">
-                            <a href="{{ url('tipo') }}" class="nav-link">Tipos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('local') }}" class="nav-link">Locais</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('local') }}" class="nav-link">Equipamentos</a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="{{ url('tipo') }}" class="nav-link">Tipos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('local') }}" class="nav-link">Locais</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('equipamento') }}" class="nav-link">
+                                    Equipamentos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('cliente') }}" class="nav-link">
+                                    Clientes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('reserva') }}" class="nav-link">
+                                    Reservas
+                                </a>
+                            </li>
                         @endauth
                     </ul>
 
